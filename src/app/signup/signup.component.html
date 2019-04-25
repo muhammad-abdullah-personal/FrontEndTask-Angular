@@ -6,30 +6,27 @@
     <div class="card-body">
       <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
 
+          <div class="alert alert-success" *ngIf="signUpSuceess">
+              Sign Up Successfull. <a routerLink="/login" class="float-right">Login Here</a>
+            </div>
         <div class="form-group row">
           <label for="inputName" class="col-sm-12 col-form-label">User Name</label>
           <div class="col-sm-12">
             <input type="text" name="name" minlength="3" maxlength="50" [(ngModel)]="form.username" class="form-control" id="inputName" placeholder="User Name" required>
-            <div class="alert alert-danger" [hidden]="!error.username">
-              {{error.username}}
-            </div>
+            <small  id="passwordHelp" class="text-danger" *ngIf="hasError">
+                Incorrect username
+              </small>
           </div>
         </div>
         <div class="form-group row">
           <label for="inputPassword3" class="col-sm-12 col-form-label">Password</label>
           <div class="col-sm-12">
             <input type="password" name="password" minlength="3" maxlength="50" [(ngModel)]="form.password"  class="form-control" id="inputPassword3" placeholder="Password" required>
-            <div class="alert alert-danger" [hidden]="!error.password">
-              {{error.password}}
-            </div>
+            <small  id="passwordHelp" class="text-danger" *ngIf="hasError">
+                Incorrect password
+              </small>
           </div>
         </div>
-        <!--<div class="form-group row">-->
-          <!--<label for="inputPassword3" class="col-sm-2 col-form-label">Confirm Password</label>-->
-          <!--<div class="col-sm-10">-->
-            <!--<input type="password" name="password_confirmation" [(ngModel)]="form.password_confirmation"  class="form-control" id="inputPasswordConfirmation3" placeholder="Confirm Password" required>-->
-          <!--</div>-->
-        <!--</div>-->
 
         <div class="form-group row">
           <div class="col-sm-12 ">

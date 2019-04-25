@@ -1,18 +1,11 @@
 <div class="mt-4 col-8 offset-2">
   <div class="container">
+    <div class="">
+        <a class="" style="margin-right:4px" routerLink="/home">Back to home</a>
+    </div>
     <div class="text-center" *ngIf="loaded">
         <h2>{{store.name}}</h2>
       <table class="table table-bordered table-striped">
-        <!--<thead class="thead-dark">-->
-        <!--<tr>-->
-          <!--<th scope="col">#</th>-->
-          <!--<th scope="col">Name</th>-->
-          <!--<th scope="col">Phone</th>-->
-          <!--<th scope="col">Address</th>-->
-          <!--<th scope="col">Description</th>-->
-          <!--<th scope="col">Type</th>-->
-        <!--</tr>-->
-        <!--</thead>-->
         <tbody>
         <tr>
           <td>Phone</td>
@@ -34,17 +27,4 @@
       </table>
     </div>
   </div>
-
-
-    <!--<div class="card-body">-->
-      <!--<h3>Address:</h3>-->
-      <!--<p>{{store.address}}</p>-->
-      <!--<h3>Description:</h3>-->
-      <!--<p>{{store.description}}</p>-->
-      <!--<h3>Phone Number:</h3>-->
-      <!--<p>{{store.phone}}</p>-->
-      <!--<h3>Type:</h3>-->
-      <!--<p>{{store.type}}</p>-->
-      <!--<h3></h3>-->
-    <!--</div>-->
 </div>

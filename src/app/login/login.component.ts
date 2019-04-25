@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
     password: null
   };
   public error = null;
+  public hasError = false;
   constructor(private jarwis: JarwisService, private token: TokenService, private router: Router, private auth: AuthService) { }
 
   ngOnInit() {
@@ -33,7 +34,9 @@ export class LoginComponent implements OnInit {
     this.router.navigateByUrl('/home');
   }
   handleError(error) {
-    this.error = error.error.error;
+    this.error = true;
+    this.hasError = true;
+    console.log('error is ' + this.error);
   }
 
 }

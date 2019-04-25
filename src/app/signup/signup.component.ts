@@ -10,27 +10,33 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   public form = {
-    // email: null,
+
     username: null,
     password: null,
-    // password_confirmation: null
+
   };
-  public error = [];
+  public hasError = false;
+  public signUpSuceess = false;
   constructor(private jarwis: JarwisService, private token: TokenService, private router: Router) { }
 
   ngOnInit() {}
   onSubmit() {
+    this.signUpSuceess = false;
+    this.hasError = false;
     console.log(this.form);
     this.jarwis.signup(this.form).subscribe(
       data => this.handleResponse(data),
       error => this.handleError(error)
+
     );
+
   }
   handleResponse(data) {
-    // this.token.handle(data.token);
-    this.router.navigateByUrl('/login');
+    this.signUpSuceess = true;
+
   }
   handleError(error) {
-    this.error = error.error.errors;
+    this.hasError = true;
+    this.signUpSuceess = false;
   }
 }
